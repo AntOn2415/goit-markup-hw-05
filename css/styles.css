@@ -28,7 +28,6 @@
   --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 /* спадкодавець */
-
 body {
   background-color: var(--color-background);
   color: var(--color-primary);
@@ -45,8 +44,8 @@ body {
 
 .image {
   display: block;
-    max-width: 100%;
-    height: auto;
+  max-width: 100%;
+  height: auto;
 }
 
 .link {
@@ -124,6 +123,10 @@ body {
   line-height: 1.143;
 }
 
+.connect {
+  transition: color 250ms var(--timing-function);
+}
+
 .site-nav .connect:hover,
 .site-nav .connect:focus {
   color: var(--color-accent);
@@ -160,7 +163,6 @@ body {
   height: 4px;
   border-radius: 2px;
   background-color: var(--color-accent);
-  transition: width 250ms var(--timing-function);
 }
 
 /* Мейл. тел. */
@@ -190,7 +192,7 @@ body {
   text-align: center;
   padding-top: 200px;
   padding-bottom: 200px;
-  /* max-width: 1600px; */
+  max-width: 1600px;
   margin-right: auto;
   margin-left: auto;
   background-color: var(--color-brand);
@@ -226,6 +228,8 @@ body {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   font-weight: var(--font-weight-more);
   line-height: 1.9;
+
+  transition: background-color 250ms var(--timing-function);
 }
 /* активна кнопка в герої*/
 .button-hero:hover,
@@ -312,10 +316,32 @@ body {
   display: flex;
 }
 .work-foto {
+  position: relative;
   margin-left: 30px;
 }
 .work-foto:first-child {
   margin-left: 0;
+}
+
+.work-overley {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 70px;
+
+  background: rgba(47, 48, 58, 0.8);
+}
+
+.work-subtitle {
+  padding: 27px 0;
+  margin: 0;
+  color: var(--color-white);
+  font-size: var(--font-size-less);
+  line-height: 1.143;
+  letter-spacing: 0.03em;
+  text-align: center;
+  text-transform: uppercase;
 }
 
 /* наша команда */
@@ -368,6 +394,8 @@ body {
   width: 44px;
   height: 44px;
   color: var(--color-icon);
+
+  transition: background-color 250ms var(--timing-function), color 250ms var(--timing-function);
 }
 
 .social-link .icon {
@@ -410,6 +438,8 @@ body {
   padding: 0 32px;
   border: 1px solid var(--color-icon);
   border-radius: 4px;
+
+  transition: fill 250ms var(--timing-function), border-color 250ms var(--timing-function);
 }
 
 .clients-link .thumb-icon:hover {
@@ -441,6 +471,8 @@ body {
   font-weight: inherit;
   font-size: var(--font-size-less);
   line-height: 1.714;
+
+  transition: color 250ms var(--timing-function);
 }
 
 .reach:hover,
@@ -454,12 +486,12 @@ body {
   font-weight: inherit;
   font-size: var(--font-size-less);
   line-height: 1.714;
+  transition: color 250ms var(--timing-function);
 }
 
 .contact-address:hover,
 .contact-address:focus {
   color: var(--color-accent);
-  transition: transform 250ms var(--timing-function);
 }
 
 /* запрошення у футорі */
@@ -495,14 +527,15 @@ body {
   gap: 8px;
 }
 
-
-
 .button-filter {
   padding: 6px 22px;
   color: var(--color-secondary);
   background: var(--color-background-light);
   font-weight: var(--font-weight-less);
   line-height: 1.625;
+
+  transition: color 250ms var(--timing-function), background-color 250ms var(--timing-function),
+    box-shadow 250ms var(--timing-function);
 }
 
 .button-filter:hover,
@@ -521,19 +554,11 @@ body {
 .portfolio {
   display: flex;
   flex-wrap: wrap;
+  gap: 30px;
 }
 .portfolio-box {
-  width: calc((100% - 60px) / 3);
-  margin-right: 30px;
-  margin-bottom: 30px;
-}
-
-.portfolio-box:nth-child(3n) {
-  margin-right: 0;
-}
-
-.portfolio-box:nth-last-child(-n + 3) {
-  margin-bottom: 0;
+  flex-basis: calc((100% - 60px) / 3);
+  transition: box-shadow 250ms var(--timing-function);
 }
 
 /* обкладинка */
@@ -611,3 +636,53 @@ body {
 }
 
 /* чи буде кращим використати для фону у герої контейнер .container-fluid ? */
+
+.bacdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(47, 48, 58, 0.4);
+
+  opacity: 1;
+  transition: opacity 250ms var(--timing-function);
+}
+.bacdrop.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+.bacdrop.is-hidden .modal {
+  transform: translate(-50%, -50%) scale(2.5);
+}
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  width: 528px;
+  height: 581px;
+
+  background: var(--color-white);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+
+  transform: translate(-50%, -50%) scale(1);
+  transition: transform 250ms var(--timing-function);
+}
+
+.btn-close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--color-white);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
