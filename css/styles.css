@@ -106,12 +106,11 @@ body {
 .nav-sector {
   display: flex;
   align-items: center;
+  gap: 50px;
 }
 .site-nav {
   display: flex;
-}
-.site-nav .item + .item {
-  margin-left: 50px;
+  gap: 50px;
 }
 
 .site-nav .connect {
@@ -143,10 +142,7 @@ body {
 .contact {
   display: flex;
   margin-left: auto;
-}
-
-.contact .item + .item {
-  margin-left: 50px;
+  gap: 50px;
 }
 
 .current {
@@ -193,8 +189,7 @@ body {
   padding-top: 200px;
   padding-bottom: 200px;
   max-width: 1600px;
-  margin-right: auto;
-  margin-left: auto;
+  margin: 0 auto;
   background-color: var(--color-brand);
   background-image: linear-gradient(to right, var(--color-img-overlay), var(--color-img-overlay)),
     url(../images/studio/Img-team.jpeg);
@@ -204,10 +199,8 @@ body {
 }
 
 .hero-title {
-  margin-top: 0;
+  margin: 0 auto;
   margin-bottom: 30px;
-  margin-right: auto;
-  margin-left: auto;
   text-transform: uppercase;
   text-align: center;
   letter-spacing: 0.06em;
@@ -240,7 +233,6 @@ body {
 .section {
   padding-top: 94px;
   padding-bottom: 94px;
-  margin-right: 0;
 }
 
 /* переваги студії */
@@ -248,7 +240,7 @@ body {
   display: flex;
   max-width: 1170px;
   height: 248px;
-  margin-left: 0;
+  gap: 30px;
 }
 
 .visually-hidden {
@@ -266,11 +258,6 @@ body {
 
 .list-merit {
   width: 270px;
-  margin-left: 30px;
-}
-
-.list-merit:first-child {
-  margin-left: 0;
 }
 
 .thumb {
@@ -314,13 +301,10 @@ body {
 
 .work {
   display: flex;
+  gap: 30px;
 }
 .work-foto {
   position: relative;
-  margin-left: 30px;
-}
-.work-foto:first-child {
-  margin-left: 0;
 }
 
 .work-overley {
@@ -351,18 +335,14 @@ body {
 
 .team {
   display: flex;
+  gap: 30px;
 }
 
 .team-list {
-  margin-left: 30px;
   background-color: var(--color-white);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 0px 0px 4px 4px;
-}
-
-.team-list:first-child {
-  margin-left: 0;
 }
 
 .desc-text {
@@ -379,8 +359,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
   gap: 10px;
   margin-bottom: 30px;
 }
@@ -413,14 +392,7 @@ body {
 /* Постійні кліенти */
 .clients {
   display: flex;
-}
-.clients-card {
-  display: flex;
-  margin-left: 30px;
-}
-
-.clients-card:nth-child(1) {
-  margin-left: 0;
+  gap: 30px;
 }
 
 .clients-link {
@@ -608,8 +580,6 @@ body {
 }
 
 .post-text {
-  margin-top: 0px;
-  margin-bottom: 0px;
   font-size: var(--font-size-less);
   line-height: 1.714;
 }
